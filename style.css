@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+body{
+    background-color: #111920;
+}
+
+/* Titulo */
+h1{
+    text-align: center;
+    position: relative;
+    width: 86% 86%;
+    margin: 50px;
+    color: #fff;
+}
+
+
+/* Linea entre el titulo */
+h1::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    z-index: -1;
+    
+}
+
+/* Background del Titulo tiene que ser igual al del body */
+h1 span{
+    background-color: #111920;
+    padding: 0 15px;
+}
+
+/* Contenedor de las imagenes */
+.img-galery{
+    width: 80%;
+    margin: 50px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+   
+}
+
+/* Imagenes, control de tamaño*/
+.img-galery img{
+    width: 100%;
+    cursor: pointer;
+    transition: 1s;
+    height: 150px;
+    width: 250px;
+    object-fit: cover;  
+}
+
+/* Efecto al pasar mause sobre las imagenes */
+.img-galery img:hover{
+    transform:scale(1.2);
+    box-shadow: rgba(238, 3, 3, 0.25) 0px 54px 55px, rgba(198, 4, 4, 0.12) 0px -12px 30px,
+     rgba(250, 6, 6, 0.375) 0px 4px 6px, rgba(226, 4, 4, 0.414) 0px 12px 13px, 
+     rgba(234, 5, 5, 0.09) 0px -3px 5px;
+}
+
+/* Como se muestra la imagen al hacer clic */
+.ful-img{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center; 
+    z-index: 99;  
+}
+
+/* Posicion y tamaño de icono X (cerrar imagen) */
+.ful-img span{
+    position: absolute;
+    top: 11%;
+    right: 10%;
+    font-size: 30px;
+    color: #fff;
+}
+
+/* Tamaño de la imagen al hacer clic*/
+.ful-img img{
+    width: 90%;
+    max-width: 900px;
+    cursor: pointer;
+}
+
+/* Color del icono X (cerrar imagen) */
+#close{
+    color: rgb(158, 37, 37);
+}
+
+
+/* Para cambiar la linea del titulo al llagar a 400px, igual para mobil */
+@media screen and (max-width: 400px) {
+    h1{
+        text-decoration: underline;
+    }
+    h1::before{
+        display: none;
+    }
+    h1 span{
+        padding: 0;
+    }    
+}
